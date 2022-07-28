@@ -5,13 +5,27 @@ import store from '../store';
 
 const {dispatch} = store;
 
+// export async function PhoneSignUp() {
+//   try {
+//     const confirmation = await auth().signInWithPhoneNumber(`${917006824513}`);
+//     // setConfirm(confirmation);
+//   } catch (error) {
+//     alert(error)
+//   }
+// }
+
+
 export const PhoneSignUp = async signupdata => {
   // let phno = Number(signupdata);
   // console.log(phno, 'action data ');
   try {
     console.log(signupdata, 'action data ');
-    const res = await auth().signInWithPhoneNumber(+917006824513);
-    console.log(res, 'resss');
+    // auth().signInWithPhoneNumber('+91 1234567890');
+
+    const confirmation = await auth().signInWithPhoneNumber('917006824513');
+    // let data = await auth().signInWithPhoneNumber(+917006824513);
+    // const user = await auth().createUserWithEmailAndPassword('sajad@gmail.com', "qwerty");
+    console.log(data, 'resss');
     if (!!res) {
       sinupWithPhone(res);
     }

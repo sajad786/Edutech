@@ -18,7 +18,7 @@ import TextInputCus from '../../Components/TextInputCus';
 import WrapperContainer from '../../Components/WrapperContainer';
 import store from '../../redux/store';
 import colors from '../../styles/colors';
-import fontFamily from '../../styles/fontFamily';
+// import fontFamily from '../../styles/fontFamily';
 import {
   moderateScale,
   moderateScaleVertical,
@@ -354,7 +354,7 @@ const styles = StyleSheet.create({
   headingText: {
     fontSize: textScale(24),
     fontWeight: '600',
-    fontFamily: fontFamily.medium,
+    // fontFamily: fontFamily.medium,
     color: colors.black,
   },
 });
