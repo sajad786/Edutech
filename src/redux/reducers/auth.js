@@ -13,7 +13,7 @@ export const authSlice = createSlice({
       state.userData = action.payload;
     },
     signpWithEmail: (state, action) => {
-      console.log(action.payload);
+      console.log(action.payload, "reducer");
       state.userData = action.payload;
     },
   },

@@ -51,16 +51,19 @@ export const PhoneSignUp = async signupdata => {
 // };
 
 export function EmailSignUp(data = {}) {
+  console.log(data,"actions emailData")
   return new Promise((resolve, reject) => {
-    auth()
-      .signInWithEmailAndPassword({
-        email: 'abcd@gmail.com',
-        password: 'abcd123',
-      })
+     auth().createUserWithEmailAndPassword(data)
       .then(res => {
         resolve(res);
-        console.log(res, 'ress>>>>');
-        // signpWithEmail(res);
+        let {user} = res.user
+        console.log(user, 'ress>>>>');
+        let userdata = {}
+        userdata['accessTocken']=user?.refreshToken
+        userdata['email']=user?.email
+        userdata['uid']=user?.uid
+        userdata['lastSignInTime']=user?.metadata?.lastSignInTime
+        signpWithEmail(userdata);
       })
       .catch(error => {
         reject(error);
